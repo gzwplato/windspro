@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ustrings.rs_applications
+msgid "Applications"
+msgstr "应用"
+
+#: ustrings.rs_categories
+msgid "Categories"
+msgstr "类别"
+
+#: ustrings.rs_configuration
+msgid "Configuration"
+msgstr "配置"
+
+#: ustrings.rs_error_64bit
+msgid "This application only runs on 64-bit Windows."
+msgstr "此应用程序只能运行在64位Windows。"
+
+#: ustrings.rs_error_admin
+msgid "This application only runs as administrator."
+msgstr "此应用程序只运行以管理员身份。"
+
+#: ustrings.rs_everything
+msgid "Everything"
+msgstr "一切"
+
+#: ustrings.rs_fullscreen
+msgid "Full screen"
+msgstr "全屏"
+
+#: ustrings.rs_multi
+msgid "Multi"
+msgstr "多"
+
+#: ustrings.rs_name
+msgid "Name"
+msgstr "名称"
+
+#: ustrings.rs_open
+msgid "Open"
+msgstr "打开"
+
+#: ustrings.rs_open_file_location
+msgid "Open file location"
+msgstr "打开文件位置"
+
+#: ustrings.rs_open_rom
+msgid "Open ROM"
+msgstr "打开 ROM"
+
+#: ustrings.rs_other
+msgid "Other"
+msgstr "其他"
+
+#: ustrings.rs_saved_games
+msgid "Saved games"
+msgstr "保存的游戏"
+
+#: ustrings.rs_search
+msgid "Search"
+msgstr "搜索"
+
+#: ustrings.rs_search_with_google
+msgid "Search with Google"
+msgstr "搜索与谷歌"
+
+#: ustrings.rs_send_to_desktop
+msgctxt "ustrings.rs_send_to_desktop"
+msgid "Send to desktop (create shortcut)"
+msgstr "发送到桌面（创建快捷方式）"
+
+#: ustrings.rs_sortby
+msgid "Sort by"
+msgstr "排序方式"
+
+#: ustrings.rs_tags
+msgid "Tags"
+msgstr "标签"
+
+#: ustrings.rs_updates
+msgid "Download Updates"
+msgstr "下载更新"

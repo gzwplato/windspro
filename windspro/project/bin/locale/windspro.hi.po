@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hi\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ustrings.rs_applications
+msgid "Applications"
+msgstr "आवेदन"
+
+#: ustrings.rs_categories
+msgid "Categories"
+msgstr "श्रेणियाँ"
+
+#: ustrings.rs_configuration
+msgid "Configuration"
+msgstr "विन्यास"
+
+#: ustrings.rs_error_64bit
+msgid "This application only runs on 64-bit Windows."
+msgstr "यह आवेदन पत्र केवल 64-बिट Windows पर चलाता है।"
+
+#: ustrings.rs_error_admin
+msgid "This application only runs as administrator."
+msgstr "यह आवेदन पत्र केवल व्यवस्थापक के रूप में चलाता है।"
+
+#: ustrings.rs_everything
+msgid "Everything"
+msgstr "सब कुछ"
+
+#: ustrings.rs_fullscreen
+msgid "Full screen"
+msgstr "पूर्ण स्क्रीन"
+
+#: ustrings.rs_multi
+msgid "Multi"
+msgstr "मल्टी"
+
+#: ustrings.rs_name
+msgid "Name"
+msgstr "नाम"
+
+#: ustrings.rs_open
+msgid "Open"
+msgstr "खुला है"
+
+#: ustrings.rs_open_file_location
+msgid "Open file location"
+msgstr "फ़ाइल के स्थान को खोलें"
+
+#: ustrings.rs_open_rom
+msgid "Open ROM"
+msgstr "खुला है ROM"
+
+#: ustrings.rs_other
+msgid "Other"
+msgstr "अन्य"
+
+#: ustrings.rs_saved_games
+msgid "Saved games"
+msgstr "सहेजे गए गेम"
+
+#: ustrings.rs_search
+msgid "Search"
+msgstr "खोजें"
+
+#: ustrings.rs_search_with_google
+msgid "Search with Google"
+msgstr "गूगल के साथ खोज"
+
+#: ustrings.rs_send_to_desktop
+msgctxt "ustrings.rs_send_to_desktop"
+msgid "Send to desktop (create shortcut)"
+msgstr "भेजने के लिए डेस्कटॉप (शॉर्टकट बनाएँ)"
+
+#: ustrings.rs_sortby
+msgid "Sort by"
+msgstr "इसके अनुसार क्रमबद्ध करें"
+
+#: ustrings.rs_tags
+msgid "Tags"
+msgstr "टैग्स"
+
+#: ustrings.rs_updates
+msgid "Download Updates"
+msgstr "अद्यतनों को डाउनलोड करें"

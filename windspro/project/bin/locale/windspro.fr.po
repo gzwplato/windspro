@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.2\n"
+
+#: ustrings.rs_applications
+msgid "Applications"
+msgstr "Applications"
+
+#: ustrings.rs_categories
+msgid "Categories"
+msgstr "Catégories"
+
+#: ustrings.rs_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#: ustrings.rs_error_64bit
+msgid "This application only runs on 64-bit Windows."
+msgstr "Cette application ne fonctionne que sur Windows 64 bits."
+
+#: ustrings.rs_error_admin
+msgid "This application only runs as administrator."
+msgstr "Cette application fonctionne uniquement en tant qu'administrateur."
+
+#: ustrings.rs_everything
+msgid "Everything"
+msgstr "Tout"
+
+#: ustrings.rs_fullscreen
+msgid "Full screen"
+msgstr "Plein écran"
+
+#: ustrings.rs_multi
+msgid "Multi"
+msgstr "Multi"
+
+#: ustrings.rs_name
+msgid "Name"
+msgstr "Nom"
+
+#: ustrings.rs_open
+msgid "Open"
+msgstr "Ouvrir"
+
+#: ustrings.rs_open_file_location
+msgid "Open file location"
+msgstr "Ouvrir l'emplacement du fichier"
+
+#: ustrings.rs_open_rom
+msgid "Open ROM"
+msgstr "Ouvrir ROM"
+
+#: ustrings.rs_other
+msgid "Other"
+msgstr "Autre"
+
+#: ustrings.rs_saved_games
+msgid "Saved games"
+msgstr "Parties sauvegardées"
+
+#: ustrings.rs_search
+msgid "Search"
+msgstr "Recherche"
+
+#: ustrings.rs_search_with_google
+msgid "Search with Google"
+msgstr "Recherche Google"
+
+#: ustrings.rs_send_to_desktop
+msgctxt "ustrings.rs_send_to_desktop"
+msgid "Send to desktop (create shortcut)"
+msgstr "Envoyer vers bureau (créer un raccourci)"
+
+#: ustrings.rs_sortby
+msgid "Sort by"
+msgstr "Trier par"
+
+#: ustrings.rs_tags
+msgid "Tags"
+msgstr "Balises"
+
+#: ustrings.rs_updates
+msgid "Download Updates"
+msgstr "Télécharger les mises à jour"

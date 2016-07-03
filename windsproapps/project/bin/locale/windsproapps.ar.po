@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#: ustrings.rs_applications
+msgid "Applications"
+msgstr "تطبيقات"
+
+#: ustrings.rs_categories
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: ustrings.rs_configuration
+msgid "Configuration"
+msgstr "التجهيز"
+
+#: ustrings.rs_error_64bit
+msgid "This application only runs on 64-bit Windows."
+msgstr "هذا التطبيق يعمل فقط على ويندوز 64 بت."
+
+#: ustrings.rs_error_admin
+msgid "This application only runs as administrator."
+msgstr "هذا التطبيق يعمل فقط كمسؤول."
+
+#: ustrings.rs_everything
+msgid "Everything"
+msgstr "كل شىء"
+
+#: ustrings.rs_fullscreen
+msgid "Full screen"
+msgstr "كامل الشاشة"
+
+#: ustrings.rs_multi
+msgid "Multi"
+msgstr "متعدد"
+
+#: ustrings.rs_name
+msgid "Name"
+msgstr "اسم"
+
+#: ustrings.rs_open
+msgid "Open"
+msgstr "فتح"
+
+#: ustrings.rs_open_file_location
+msgid "Open file location"
+msgstr "فتح موقع الملف"
+
+#: ustrings.rs_open_rom
+msgid "Open ROM"
+msgstr "ROM مفتوحة"
+
+#: ustrings.rs_other
+msgid "Other"
+msgstr "أخرى"
+
+#: ustrings.rs_saved_games
+msgid "Saved games"
+msgstr "الألعاب التي تم حفظها"
+
+#: ustrings.rs_search
+msgid "Search"
+msgstr "بحث"
+
+#: ustrings.rs_search_with_google
+msgid "Search with Google"
+msgstr "البحث مع جوجل"
+
+#: ustrings.rs_send_to_desktop
+msgctxt "ustrings.rs_send_to_desktop"
+msgid "Send to desktop (create shortcut)"
+msgstr "ارسل الى سطح المكتب (إنشاء اختصار)"
+
+#: ustrings.rs_sortby
+msgid "Sort by"
+msgstr "ترتيب حسب"
+
+#: ustrings.rs_tags
+msgid "Tags"
+msgstr "التسميات"
+
+#: ustrings.rs_updates
+msgid "Download Updates"
+msgstr "تحميل التحديثات"
