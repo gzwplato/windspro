@@ -11,7 +11,7 @@ uses
   lclintf, Dialogs, Windows;
 
 const
-  Version = 20160408;
+  Version = 20160824;
   UpdatesURL = 'http://lainz.github.io/windspro/version/windspro14.txt';
   rs_application_title = 'WinDS PRO';
 
@@ -201,10 +201,10 @@ GBA|*.agb;*.bin;*.elf;*.gba;*.mb;
 GB|*.gb;*.gmb;*.sgb;
 }
   { citra }
-  List.AddEx('Citra', '2016.04.08', 'citra', 'citra-qt.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
+  List.AddEx('Citra', '2016.08.16', 'citra', 'citra-qt.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
   { no$gba }
   List.AddEx('No$gba', '2.6a', 'no$gba', 'no$gba.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
-  List.AddEx('No$gba_', '2.8b', 'no$gba_', 'no$gba.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
+  List.AddEx('No$gba_', '2.8d', 'no$gba_', 'no$gba.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
   List.AddEx('No$Zoomer', '2.3.0.2', 'no$gba', 'no$zoomer.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
   List.AddEx('No$Mooz', '1.0', 'no$gba', 'no$mooz.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   List.AddEx('NOZ', '2.3', 'no$gba', 'noz.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
@@ -212,7 +212,7 @@ GB|*.gb;*.gmb;*.sgb;
   List.AddEx('NGZoom', '1.0', 'no$gba', 'ngzoom.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   List.AddEx('No$gba2X', '1.0', 'no$gba', 'no$gba2x.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   { desmume }
-  List.AddEx('DeSmuME', 'r5431', 'desmume', 'desmume.exe', '', '%1:s', 'NDS', '', 'desmume', 'archivo', 'NDS|*.dsi;*nds;*pme;*.srl;');
+  List.AddEx('DeSmuME', 'r5548', 'desmume', 'desmume.exe', '', '%1:s', 'NDS', '', 'desmume', 'archivo', 'NDS|*.dsi;*nds;*pme;*.srl;');
   { vba }
   List.AddEx('VBA-M', '2.0 (2015.11.19)', 'vbam', 'vbam.exe', '', '%1:s', 'GB/GBC/GBA', '', 'vba', 'archivo', 'GB/GBC/GBA|*.gb;*.gmb;*.sgb;*.cgb;*.gbc;*.agb;*.bin;*.elf;*.gba;*.mb;');
   List.AddEx('VBA Link', '1.8.0', 'vbalink', 'vbalink.exe', '', '%1:s', 'GB/GBC/GBA', '', 'vba', 'archivo', 'GB/GBC/GBA|*.gb;*.gmb;*.sgb;*.cgb;*.gbc;*.agb;*.bin;*.elf;*.gba;*.mb;');
