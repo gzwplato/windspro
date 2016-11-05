@@ -578,7 +578,9 @@ function extension()
 	elseif String.CompareNoCase(archivo.Extension, ".srl") == 0 then abrir_nintendo_ds()
 	elseif String.CompareNoCase(archivo.Extension, ".pme") == 0 then abrir_nintendo_ds()
 	elseif String.CompareNoCase(archivo.Extension, ".3ds") == 0 then abrir_nintendo_3ds()
+	elseif String.CompareNoCase(archivo.Extension, ".3dsx") == 0 then abrir_nintendo_3ds()
 	elseif String.CompareNoCase(archivo.Extension, ".cci") == 0 then abrir_nintendo_3ds()
+	elseif String.CompareNoCase(archivo.Extension, ".cxi") == 0 then abrir_nintendo_3ds()
 	elseif String.CompareNoCase(archivo.Extension, ".csu") == 0 then abrir_nintendo_3ds()
 	elseif String.CompareNoCase(archivo.Extension, ".rar") == 0 then extraer()
 	elseif String.CompareNoCase(archivo.Extension, ".zip") == 0 then extraer()
@@ -623,8 +625,8 @@ function extraer()
 		end
 end
 
-function abrir_nintendo_3ds()
-	File.Run("3dsexplorer\\3dsexplorer.exe", archivo_ruta, "3dsexplorer", SW_SHOWNORMAL, false)
+function abrir_nintendo_3ds(comandos)
+	File.Run("emu\\citra\\citra-qt.exe", archivo_ruta, "emu\\citra", SW_SHOWNORMAL, false)
 end
 
 function abrir_windspro(funcion)
@@ -1504,8 +1506,8 @@ end
 -----------------------------------------------------------------------------------------------------------------------------</Script>
 <BookMarks count="0">
 </BookMarks>
-<DesignCodeLine>485</DesignCodeLine>
-<DesignCodeCol>37</DesignCodeCol>
+<DesignCodeLine>517</DesignCodeLine>
+<DesignCodeCol>1</DesignCodeCol>
 </Globals>
 <Defaults>
 <StartupPage>_PageFirst</StartupPage>
@@ -2019,7 +2021,18 @@ if e_Key == 115 then cambiar_fondo() end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <MouseOverSound/>
 <MouseOverSoundMode>0</MouseOverSoundMode>
 <MouseClickSound/>
@@ -2105,7 +2118,18 @@ if e_Key == 115 then cambiar_fondo() end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <NormalImage>
 <Filename>windspro\skins\Ocean\window.png</Filename>
 <UseTransColor>0</UseTransColor>
@@ -2199,7 +2223,18 @@ if e_Key == 115 then cambiar_fondo() end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\cerrar.btn</Filename>
 <Style>0</Style>
@@ -2310,7 +2345,18 @@ if e_Key == 115 then cambiar_fondo() end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -2422,7 +2468,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -2533,7 +2590,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>1</Style>
@@ -2645,7 +2713,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -2756,7 +2835,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>1</Style>
@@ -2868,7 +2958,18 @@ abrir_vbalink("","si")</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -2980,7 +3081,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3091,7 +3203,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>1</Style>
@@ -3203,7 +3326,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3315,7 +3449,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3427,7 +3572,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3539,7 +3695,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3651,7 +3818,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3763,7 +3941,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3875,7 +4064,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -3986,7 +4186,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>1</Style>
@@ -4097,7 +4308,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -4208,7 +4430,18 @@ ocultar_menu_todos()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -4320,7 +4553,18 @@ DialogEx.Show("Opciones", true, nil, nil)</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -4432,7 +4676,18 @@ abrir()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>0</Style>
@@ -4543,7 +4798,18 @@ abrir()</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <BUTTON>
 <Filename>windspro\skins\Ocean\button.btn</Filename>
 <Style>1</Style>
@@ -4913,7 +5179,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <NormalImage>
 <Filename>AutoPlay\Images\h1.png</Filename>
 <UseTransColor>0</UseTransColor>
@@ -5435,7 +5712,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>Nintendo DS</Body>
 <NormalColor>2147483647</NormalColor>
@@ -5547,7 +5835,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>Game Boy Advance</Body>
 <NormalColor>2147483647</NormalColor>
@@ -5659,7 +5958,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>Game Boy Color</Body>
 <NormalColor>2147483647</NormalColor>
@@ -5771,7 +6081,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>WinDS PRO</Body>
 <NormalColor>8421504</NormalColor>
@@ -5972,7 +6293,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>Skin</Body>
 <NormalColor>2147483647</NormalColor>
@@ -6098,7 +6430,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>Editor...</Text>
 <TextColor format="hex">000000</TextColor>
@@ -6220,7 +6563,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>Search Saved Games</Text>
 <TextColor format="hex">000000</TextColor>
@@ -6342,7 +6696,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>ROM Trimmer</Text>
 <TextColor format="hex">000000</TextColor>
@@ -6467,7 +6832,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>Backup Saved Games</Text>
 <TextColor format="hex">000000</TextColor>
@@ -6575,7 +6951,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>Saved Games</Body>
 <NormalColor>2147483647</NormalColor>
@@ -6687,7 +7074,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>Auto Backup</Text>
 <NormalColor format="hex">000000</NormalColor>
@@ -6810,7 +7208,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>NO$GBA..</Text>
 <TextColor format="hex">000000</TextColor>
@@ -6932,7 +7341,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>NO$GBA Mod...</Text>
 <TextColor format="hex">000000</TextColor>
@@ -7054,7 +7474,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>DeSmuME..</Text>
 <TextColor format="hex">000000</TextColor>
@@ -7176,7 +7607,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>VBA-Link..</Text>
 <TextColor format="hex">000000</TextColor>
@@ -7298,7 +7740,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>VBA-M..</Text>
 <TextColor format="hex">000000</TextColor>
@@ -7420,7 +7873,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>backup..</Text>
 <TextColor format="hex">000000</TextColor>
@@ -7528,7 +7992,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>NO$PMP</Text>
 <NormalColor format="hex">000000</NormalColor>
@@ -7637,7 +8112,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text>NO$WTT</Text>
 <NormalColor format="hex">000000</NormalColor>
@@ -7746,7 +8232,18 @@ File.ExploreFolder(bkp_dir, SW_SHOWNORMAL);</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Text>
 <Body>Game Boy</Body>
 <NormalColor>2147483647</NormalColor>
@@ -8000,7 +8497,18 @@ end</Script>
 <BookMarks count="0">
 </BookMarks>
 </Event>
-<Actions/>
+<Actions>
+<Action>
+<Type>0</Type>
+<Name>None</Name>
+<Exit>0</Exit>
+<TreeStates>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+<TreeState>0</TreeState>
+</TreeStates>
+</Action>
+</Actions>
 <Options>
 <Text/>
 <TextColor format="hex">000000</TextColor>
@@ -8575,7 +9083,7 @@ Please double-click on each item to find out how to install it.</DlgMsg>
 <HelpURL>http://www.yourdomain.com/help.htm</HelpURL>
 </MissingTechs>
 <ProgramPrefs>
-<OutputFolder>.\bin</OutputFolder>
+<OutputFolder>C:\WinDS PRO Out</OutputFolder>
 <EXEName>windspro.exe</EXEName>
 <EnableAutoPlayFeatureBTF>0</EnableAutoPlayFeatureBTF>
 <EnableAutoPlayFeatureCDRW>1</EnableAutoPlayFeatureCDRW>
