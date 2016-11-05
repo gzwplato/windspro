@@ -1,19 +1,184 @@
 object frmconfig: Tfrmconfig
-  Left = 86
+  Left = 425
   Height = 480
-  Top = 142
+  Top = 134
   Width = 640
   Caption = 'Configuration'
   ClientHeight = 480
   ClientWidth = 640
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.7'
+  object Panel1: TPanel
+    Left = 0
+    Height = 224
+    Top = 0
+    Width = 640
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ChildSizing.LeftRightSpacing = 8
+    ChildSizing.TopBottomSpacing = 8
+    ChildSizing.HorizontalSpacing = 8
+    ChildSizing.VerticalSpacing = 8
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 224
+    ClientWidth = 640
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 8
+      Height = 28
+      Top = 8
+      Width = 323
+      Alignment = taRightJustify
+      Caption = 'Game Boy'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object GB: TComboBox
+      Left = 339
+      Height = 28
+      Top = 8
+      Width = 293
+      ItemHeight = 20
+      Items.Strings = (
+        'VBA Link'
+        'VBA-M'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 28
+      Top = 44
+      Width = 323
+      Alignment = taRightJustify
+      Caption = 'Game Boy Color'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object GBC: TComboBox
+      Left = 339
+      Height = 28
+      Top = 44
+      Width = 293
+      ItemHeight = 20
+      Items.Strings = (
+        'VBA Link'
+        'VBA-M'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 28
+      Top = 80
+      Width = 323
+      Alignment = taRightJustify
+      Caption = 'Game Boy Advance'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object GBA: TComboBox
+      Left = 339
+      Height = 28
+      Top = 80
+      Width = 293
+      ItemHeight = 20
+      Items.Strings = (
+        'No$gba'
+        'No$gba_'
+        'No$Zoomer'
+        'VBA Link'
+        'VBA-M'
+      )
+      Style = csDropDownList
+      TabOrder = 3
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 28
+      Top = 116
+      Width = 323
+      Alignment = taRightJustify
+      Caption = 'Nintendo DS'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object NDS: TComboBox
+      Left = 339
+      Height = 28
+      Top = 116
+      Width = 293
+      ItemHeight = 20
+      Items.Strings = (
+        'No$gba'
+        'No$gba_'
+        'No$Zoomer'
+        'DeSmuME'
+      )
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 28
+      Top = 152
+      Width = 323
+      Alignment = taRightJustify
+      Caption = 'Nintendo 3DS'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object N3DS: TComboBox
+      Left = 339
+      Height = 28
+      Top = 152
+      Width = 293
+      ItemHeight = 20
+      Items.Strings = (
+        'Citra'
+        'Citra (32 bit)'
+      )
+      Style = csDropDownList
+      TabOrder = 5
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 28
+      Top = 188
+      Width = 323
+      Alignment = taRightJustify
+      Caption = 'Skin'
+      Layout = tlCenter
+      ParentColor = False
+    end
+    object DarkSkinComboBox: TComboBox
+      Left = 339
+      Height = 28
+      Top = 188
+      Width = 293
+      ItemHeight = 20
+      Items.Strings = (
+        'Light Skin'
+        'Dark Skin'
+        'Apps Skin'
+      )
+      OnSelect = DarkSkinComboBoxSelect
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
   object ColorsListBox: TListBox
     Left = 0
-    Height = 441
-    Top = 39
+    Height = 256
+    Top = 224
     Width = 640
     Align = alClient
     BorderStyle = bsNone
@@ -22,23 +187,6 @@ object frmconfig: Tfrmconfig
     OnDrawItem = ColorsListBoxDrawItem
     OnSelectionChange = ColorsListBoxSelectionChange
     Style = lbOwnerDrawVariable
-    TabOrder = 0
-  end
-  object DarkSkinComboBox: TComboBox
-    Left = 8
-    Height = 23
-    Top = 8
-    Width = 624
-    Align = alTop
-    BorderSpacing.Around = 8
-    ItemHeight = 15
-    Items.Strings = (
-      'Light Skin'
-      'Dark Skin'
-      'Apps Skin'
-    )
-    OnSelect = DarkSkinComboBoxSelect
-    Style = csDropDownList
     TabOrder = 1
   end
 end

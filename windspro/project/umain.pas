@@ -347,7 +347,7 @@ end;
 procedure Tfrmwindspro.FormDropFiles(Sender: TObject; const FileNames: array of string);
 begin
   if FileExistsUTF8(FileNames[0]) then
-    Apps.OpenFile(FileNames[0]);
+    Apps.OpenFile(FileNames[0], Settings);
 end;
 
 procedure Tfrmwindspro.FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
@@ -373,7 +373,7 @@ begin
   begin
     FCheckFileName := False;
     if FileExistsUTF8(ParamStr(1)) then
-      Apps.OpenFile(ParamStr(1));
+      Apps.OpenFile(ParamStr(1), Settings);
   end;
 end;
 
@@ -435,7 +435,7 @@ begin
   OpenROMDialog.Filter := Apps.GlobalFilter;
   if OpenROMDialog.Execute then
   begin
-    Apps.OpenFile(OpenROMDialog.FileName);
+    Apps.OpenFile(OpenROMDialog.FileName, Settings);
   end;
 end;
 

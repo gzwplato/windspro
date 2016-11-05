@@ -8,7 +8,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ustrings, uskin, types, LCLType, ubidimodetools;
+  ustrings, uskin, types, LCLType, ExtCtrls, ubidimodetools;
 
 type
 
@@ -16,10 +16,24 @@ type
 
   Tfrmconfig = class(TForm)
     ColorsListBox: TListBox;
+    GB: TComboBox;
+    GBC: TComboBox;
+    GBA: TComboBox;
+    NDS: TComboBox;
+    N3DS: TComboBox;
     DarkSkinComboBox: TComboBox;
-    procedure ColorsListBoxDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState);
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Panel1: TPanel;
+    procedure ColorsListBoxDrawItem(Control: TWinControl; Index: integer;
+      ARect: TRect; State: TOwnerDrawState);
     procedure ColorsListBoxSelectionChange(Sender: TObject; {%H-}User: boolean);
     procedure DarkSkinComboBoxSelect(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -32,6 +46,9 @@ var
   frmconfig: Tfrmconfig;
 
 implementation
+
+uses
+  umain;
 
 {$R *.lfm}
 
@@ -56,9 +73,15 @@ procedure Tfrmconfig.FormShow(Sender: TObject);
 begin
   DarkSkinComboBox.ItemIndex := integer(Skin.SkinType);
   ColorsListBox.ItemIndex := Skin.UserColor + 1;
+  GB.Caption := frmwindspro.Settings.GameBoy;
+  GBC.Caption := frmwindspro.Settings.GameBoyColor;
+  GBA.Caption := frmwindspro.Settings.GameBoyAdvance;
+  NDS.Caption := frmwindspro.Settings.NintendoDS;
+  N3DS.Caption := frmwindspro.Settings.Nintendo3DS;
 end;
 
-procedure Tfrmconfig.ColorsListBoxDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState);
+procedure Tfrmconfig.ColorsListBoxDrawItem(Control: TWinControl;
+  Index: integer; ARect: TRect; State: TOwnerDrawState);
 var
   lbcontrol: TListBox;
   margin, doublemargin: integer;
@@ -103,6 +126,15 @@ procedure Tfrmconfig.DarkSkinComboBoxSelect(Sender: TObject);
 begin
   Skin.SkinType := TSkinType(DarkSkinComboBox.ItemIndex);
   UpdateTheme;
+end;
+
+procedure Tfrmconfig.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  frmwindspro.Settings.GameBoy := GB.Caption;
+  frmwindspro.Settings.GameBoyColor := GBC.Caption;
+  frmwindspro.Settings.GameBoyAdvance := GBA.Caption;
+  frmwindspro.Settings.NintendoDS := NDS.Caption;
+  frmwindspro.Settings.Nintendo3DS := N3DS.Caption;
 end;
 
 procedure Tfrmconfig.Translate;

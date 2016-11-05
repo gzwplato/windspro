@@ -8,7 +8,7 @@ interface
 
 uses
   Classes, SysUtils, LazFileUtils, uapps, UTF8Process, {$IFDEF WINDOWS}ushortcuts, Windows,{$ENDIF} ustrings,
-  lclintf, Dialogs;
+  lclintf, Dialogs, usettings;
 
 const
   Version = 20161019;
@@ -31,7 +31,7 @@ type
     constructor Create(AOwner: TComponent); override;
     procedure Execute(App: TAppItem; FileName: string = '');
     procedure ExecuteEx(AppName: string; FileName: string = '');
-    procedure OpenFile(FileName: string);
+    procedure OpenFile(FileName: string; Settings: TSettings);
     procedure OpenDirectory(App: TAppItem);
     procedure SavedGames(App: TAppItem);
     procedure CreateDesktopShortCut(App: TAppItem);
@@ -110,8 +110,9 @@ begin
       740: ShowMessage(rs_error_admin);
       193, 216: ShowMessage(rs_error_64bit);
     end;
-    {$ENDIF}
+    {$ELSE}
     ShowMessage('Error executing application.');
+    {$ENDIF}
   end;
   process.Free;
 end;
@@ -130,20 +131,20 @@ begin
   end;
 end;
 
-procedure TWinDSPROApps.OpenFile(FileName: string);
+procedure TWinDSPROApps.OpenFile(FileName: string; Settings: TSettings);
 begin
   {$IFDEF WINDOWS}
   case LowerCase(ExtractFileExt(FileName)) of
     // NDS
-    '.dsi', '.nds', '.pme', '.srl': ExecuteEx('no$zoomer', FileName);
+    '.dsi', '.nds', '.pme', '.srl': ExecuteEx(Settings.NintendoDS, FileName);
     // 3DS
-    '.3ds', '.3dsx', '.cci', '.cxi', '.csu': ExecuteEx('citra', FileName);
+    '.3ds', '.3dsx', '.cci', '.cxi', '.csu': ExecuteEx(Settings.Nintendo3DS, FileName);
     // GBA
-    '.agb', '.bin', '.elf', '.gba', '.mb': ExecuteEx('vba-m', FileName);
+    '.agb', '.bin', '.elf', '.gba', '.mb': ExecuteEx(Settings.GameBoyAdvance, FileName);
     // GBC
-    '.cgb', '.gbc': ExecuteEx('vba-m', FileName);
+    '.cgb', '.gbc': ExecuteEx(Settings.GameBoyColor, FileName);
     // GB
-    '.gb', '.gmb', '.sgb': ExecuteEx('vba-m', FileName);
+    '.gb', '.gmb', '.sgb': ExecuteEx(Settings.GameBoy, FileName);
   end;
   {$ENDIF}
 end;
