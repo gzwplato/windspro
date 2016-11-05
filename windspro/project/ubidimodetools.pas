@@ -13,13 +13,14 @@ function GetBiDiMode: TBiDiMode;
 implementation
 
 uses
-  FileUtil, LCLProc;
+  FileUtil, LCLProc, LazUTF8;
 
 function GetLang: string;
 var
   T: string; // unused FallBackLang
   i: integer;
 begin
+  Result := '';
   { We use the same method that is used in LCLTranslator unit }
 
   for i := 1 to Paramcount - 1 do
@@ -32,7 +33,7 @@ begin
     Result := GetEnvironmentVariableUTF8('LANG');
 
   if Result = '' then
-    LCLGetLanguageIDs(Result, T);
+    LazGetLanguageIDs(Result, {%H-}T);
 end;
 
 function GetBiDiMode: TBiDiMode;

@@ -33,8 +33,8 @@ begin
 
   { Get the desktop location }
   SHGetSpecialFolderLocation(0, CSIDL_DESKTOPDIRECTORY, PIDL);
-  SHGetPathFromIDList(PIDL, InFolder);
-  LinkName := InFolder + PathDelim + ShortcutName + '.lnk';
+  SHGetPathFromIDList(PIDL, {%H-}InFolder);
+  LinkName := InFolder + PathDelim + ShortcutName {%H-}+ '.lnk';
 
   { Create the link }
   IPFile.Save(PWChar(LinkName), False);

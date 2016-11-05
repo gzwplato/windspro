@@ -18,13 +18,13 @@ object frmwindspro: Tfrmwindspro
   OnShow = FormShow
   ParentBiDiMode = False
   Position = poDefault
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.7'
   WindowState = wsMaximized
   object AppsListBox: TListBox
-    Left = 152
-    Height = 236
-    Top = 244
-    Width = 488
+    Left = 200
+    Height = 186
+    Top = 294
+    Width = 440
     Align = alClient
     BorderStyle = bsNone
     Color = clWhite
@@ -43,9 +43,9 @@ object frmwindspro: Tfrmwindspro
   end
   object TagsListBox: TListBox
     Left = 0
-    Height = 236
-    Top = 244
-    Width = 152
+    Height = 186
+    Top = 294
+    Width = 200
     Align = alLeft
     BorderStyle = bsNone
     Color = 15921906
@@ -92,6 +92,101 @@ object frmwindspro: Tfrmwindspro
     Align = alTop
     ResizeAnchor = akTop
     ResizeStyle = rsLine
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 244
+    Width = 640
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ChildSizing.LeftRightSpacing = 4
+    ChildSizing.TopBottomSpacing = 4
+    ChildSizing.HorizontalSpacing = 4
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 10
+    ClientHeight = 50
+    ClientWidth = 640
+    TabOrder = 4
+    object BCMaterialButton1: TBCMaterialDesignButton
+      Left = 4
+      Height = 42
+      Top = 4
+      Width = 104
+      NormalColor = 9984315
+      TextColor = clWhite
+      TextShadow = False
+      TextFont = 'default'
+      AutoSize = True
+      Caption = 'Facebook'
+      OnClick = BCMaterialDesignButton1Click
+    end
+    object BCMaterialButton2: TBCMaterialDesignButton
+      Left = 112
+      Height = 42
+      Top = 4
+      Width = 85
+      NormalColor = 15641685
+      TextColor = clWhite
+      TextShadow = False
+      TextFont = 'default'
+      AutoSize = True
+      Caption = 'Twitter'
+      OnClick = BCMaterialDesignButton2Click
+    end
+    object BCMaterialButton3: TBCMaterialDesignButton
+      Left = 201
+      Height = 42
+      Top = 4
+      Width = 99
+      NormalColor = 3754973
+      TextColor = clWhite
+      TextShadow = False
+      TextFont = 'default'
+      AutoSize = True
+      Caption = 'Google+'
+      OnClick = BCMaterialDesignButton3Click
+    end
+    object BCMaterialButton4: TBCMaterialDesignButton
+      Left = 304
+      Height = 42
+      Top = 4
+      Width = 99
+      NormalColor = 187
+      TextColor = clWhite
+      TextShadow = False
+      TextFont = 'default'
+      AutoSize = True
+      Caption = 'YouTube'
+      OnClick = BCMaterialDesignButton4Click
+    end
+    object BCMaterialButton5: TBCMaterialDesignButton
+      Left = 407
+      Height = 42
+      Top = 4
+      Width = 119
+      NormalColor = 8546304
+      TextColor = clWhite
+      TextShadow = False
+      TextFont = 'default'
+      AutoSize = True
+      Caption = 'WinDS PRO'
+      OnClick = BCMaterialDesignButton5Click
+    end
+    object BCMaterialButton6: TBCMaterialDesignButton
+      Left = 530
+      Height = 42
+      Top = 4
+      Width = 155
+      NormalColor = 13207330
+      TextColor = clWhite
+      TextShadow = False
+      TextFont = 'default'
+      AutoSize = True
+      Caption = 'Foro WinDS PRO'
+      OnClick = BCMaterialDesignButton6Click
+    end
   end
   object AppsPopup: TPopupMenu
     OnPopup = AppsPopupPopup

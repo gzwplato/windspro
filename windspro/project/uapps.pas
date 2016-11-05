@@ -89,7 +89,7 @@ type
   public
     procedure SaveToFile(AFileName: string);
     procedure LoadFromFile(AFileName: string);
-    procedure OnFindClass(Reader: TReader; const AClassName: string; var ComponentClass: TComponentClass);
+    procedure OnFindClass({%H-}Reader: TReader; const AClassName: string; var ComponentClass: TComponentClass);
   published
     property List: TAppList read FList write FList;
   end;

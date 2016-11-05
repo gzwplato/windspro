@@ -18,7 +18,7 @@ type
     ColorsListBox: TListBox;
     DarkSkinComboBox: TComboBox;
     procedure ColorsListBoxDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState);
-    procedure ColorsListBoxSelectionChange(Sender: TObject; User: boolean);
+    procedure ColorsListBoxSelectionChange(Sender: TObject; {%H-}User: boolean);
     procedure DarkSkinComboBoxSelect(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);

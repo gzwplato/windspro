@@ -52,7 +52,7 @@ type
     constructor Create(AOwner: TComponent); override;
     procedure SaveToFile(AFileName: string);
     procedure LoadFromFile(AFileName: string);
-    procedure OnFindClass(Reader: TReader; const AClassName: string; var ComponentClass: TComponentClass);
+    procedure OnFindClass({%H-}Reader: TReader; const AClassName: string; var ComponentClass: TComponentClass);
   public
     procedure UpdateSkin;
     procedure LightSkin;

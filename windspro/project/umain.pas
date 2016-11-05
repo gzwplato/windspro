@@ -9,7 +9,8 @@ interface
 uses
   Classes, Forms, Controls, Graphics, StdCtrls, SysUtils, ustrings,
   uwindsproapps, LCLType, Menus, Dialogs, ExtCtrls, StrUtils, types, uskin,
-  usettings, ubidimodetools, uapps, LazFileUtils, fphttpclient, LCLIntF;
+  usettings, ubidimodetools, uapps, LazFileUtils, fphttpclient, LCLIntF,
+  BCBrightAndContrast, BCMaterialDesignButton;
 
 type
 
@@ -37,6 +38,12 @@ type
   Tfrmwindspro = class(TForm)
     AppsListBox: TListBox;
     AppsPopup: TPopupMenu;
+    BCMaterialButton1: TBCMaterialDesignButton;
+    BCMaterialButton2: TBCMaterialDesignButton;
+    BCMaterialButton3: TBCMaterialDesignButton;
+    BCMaterialButton4: TBCMaterialDesignButton;
+    BCMaterialButton5: TBCMaterialDesignButton;
+    BCMaterialButton6: TBCMaterialDesignButton;
     HeaderPopup: TPopupMenu;
     FilterEdit: TEdit;
     HeaderImage: TImage;
@@ -59,22 +66,29 @@ type
     miOpen: TMenuItem;
     OpenROMDialog: TOpenDialog;
     HeaderSplitter: TSplitter;
+    Panel1: TPanel;
     TagsListBox: TListBox;
     procedure AppsListBoxDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState);
-    procedure AppsListBoxKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
-    procedure AppsListBoxMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: integer);
+    procedure AppsListBoxKeyDown(Sender: TObject; var Key: word; {%H-}Shift: TShiftState);
+    procedure AppsListBoxMouseDown(Sender: TObject; Button: TMouseButton; {%H-}Shift: TShiftState; X, Y: integer);
     procedure AppsListBoxMouseLeave(Sender: TObject);
-    procedure AppsListBoxMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
+    procedure AppsListBoxMouseMove(Sender: TObject; {%H-}Shift: TShiftState; X, Y: integer);
     procedure AppsPopupPopup(Sender: TObject);
+    procedure BCMaterialDesignButton1Click(Sender: TObject);
+    procedure BCMaterialDesignButton2Click(Sender: TObject);
+    procedure BCMaterialDesignButton3Click(Sender: TObject);
+    procedure BCMaterialDesignButton4Click(Sender: TObject);
+    procedure BCMaterialDesignButton5Click(Sender: TObject);
+    procedure BCMaterialDesignButton6Click(Sender: TObject);
     procedure FilterEditChange(Sender: TObject);
-    procedure FilterEditKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FilterEditKeyDown(Sender: TObject; var Key: word; {%H-}Shift: TShiftState);
+    procedure FormClose(Sender: TObject; var {%H-}CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure AppsListBoxDblClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormDropFiles(Sender: TObject; const FileNames: array of string);
-    procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+    procedure FormKeyDown(Sender: TObject; var Key: word; {%H-}Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure miByNameClick(Sender: TObject);
     procedure miByTagsClick(Sender: TObject);
@@ -90,10 +104,10 @@ type
     procedure OnChangeTheme(Sender: TObject);
     procedure OnTerminateDownload(Sender: TObject);
     procedure TagsListBoxDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState);
-    procedure TagsListBoxKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+    procedure TagsListBoxKeyDown(Sender: TObject; var Key: word; {%H-}Shift: TShiftState);
     procedure TagsListBoxMouseLeave(Sender: TObject);
-    procedure TagsListBoxMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
-    procedure TagsListBoxSelectionChange(Sender: TObject; User: boolean);
+    procedure TagsListBoxMouseMove(Sender: TObject; {%H-}Shift: TShiftState; X, Y: integer);
+    procedure TagsListBoxSelectionChange(Sender: TObject; {%H-}User: boolean);
   private
     FApps: TWinDSPROApps;
     FSettings: TSettings;
@@ -196,6 +210,13 @@ begin
   FillTagsListBox;
   FGoFullScreen := True;
   FUpdatingAppsListBox := True;
+
+  BCMaterialButton1.NormalColorEffect := Bright(BCMaterialButton1.NormalColor, 90);
+  BCMaterialButton2.NormalColorEffect := Bright(BCMaterialButton2.NormalColor, 90);
+  BCMaterialButton3.NormalColorEffect := Bright(BCMaterialButton3.NormalColor, 90);
+  BCMaterialButton4.NormalColorEffect := Bright(BCMaterialButton4.NormalColor, 90);
+  BCMaterialButton5.NormalColorEffect := Bright(BCMaterialButton5.NormalColor, 90);
+  BCMaterialButton6.NormalColorEffect := Bright(BCMaterialButton6.NormalColor, 90);
 end;
 
 procedure Tfrmwindspro.AppsListBoxKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
@@ -256,6 +277,36 @@ begin
 
   if miSavedGames.Visible then
     miSavedGames.Visible := TAppItem(AppsListBox.Items.Objects[AppsListBox.ItemIndex]).SavedGames <> '';
+end;
+
+procedure Tfrmwindspro.BCMaterialDesignButton1Click(Sender: TObject);
+begin
+  OpenURL('https://facebook.com/windsprocentral');
+end;
+
+procedure Tfrmwindspro.BCMaterialDesignButton2Click(Sender: TObject);
+begin
+  OpenURL('https://twitter.com/windspro');
+end;
+
+procedure Tfrmwindspro.BCMaterialDesignButton3Click(Sender: TObject);
+begin
+  OpenURL('https://plus.google.com/+WindsprocentralBlogspot');
+end;
+
+procedure Tfrmwindspro.BCMaterialDesignButton4Click(Sender: TObject);
+begin
+  OpenURL('https://www.youtube.com/user/windspro');
+end;
+
+procedure Tfrmwindspro.BCMaterialDesignButton5Click(Sender: TObject);
+begin
+  OpenURL('https://windsprocentral.blogspot.com/');
+end;
+
+procedure Tfrmwindspro.BCMaterialDesignButton6Click(Sender: TObject);
+begin
+  OpenURL('http://windspro.activo.in/');
 end;
 
 procedure Tfrmwindspro.FilterEditChange(Sender: TObject);
@@ -463,7 +514,7 @@ end;
 procedure Tfrmwindspro.Translate;
 begin
   BiDiMode := GetBiDiMode;
-  Caption := rs_application_title;
+  Caption := rs_application_title + ' ' + VersionStr;
   miOpen.Caption := ustrings.rs_open;
   miOpenROM.Caption := ustrings.rs_open_rom;
   miOpenFileLocation.Caption := ustrings.rs_open_file_location;

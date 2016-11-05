@@ -24,7 +24,7 @@ type
   public
     procedure SaveToFile(AFileName: string);
     procedure LoadFromFile(AFileName: string);
-    procedure OnFindClass(Reader: TReader; const AClassName: string; var ComponentClass: TComponentClass);
+    procedure OnFindClass({%H-}Reader: TReader; const AClassName: string; var ComponentClass: TComponentClass);
   published
     property UserColor: integer read FUserColor write SetFUserColor;
     property SkinType: TSkinType read FSkinType write SetFSkinType;

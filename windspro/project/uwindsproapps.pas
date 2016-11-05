@@ -7,11 +7,12 @@ unit uwindsproapps;
 interface
 
 uses
-  Classes, SysUtils, StrUtils, LazFileUtils, uapps, UTF8Process, ushortcuts, ustrings,
-  lclintf, Dialogs, Windows;
+  Classes, SysUtils, LazFileUtils, uapps, UTF8Process, {$IFDEF WINDOWS}ushortcuts, Windows,{$ENDIF} ustrings,
+  lclintf, Dialogs;
 
 const
-  Version = 20160824;
+  Version = 20161019;
+  VersionStr = '2016.10.19';
   UpdatesURL = 'http://lainz.github.io/windspro/version/windspro14.txt';
   rs_application_title = 'WinDS PRO';
 
@@ -104,10 +105,13 @@ begin
   try
     process.Execute;
   except
+    {$IFDEF WINDOWS}
     case GetLastError of
       740: ShowMessage(rs_error_admin);
       193, 216: ShowMessage(rs_error_64bit);
     end;
+    {$ENDIF}
+    ShowMessage('Error executing application.');
   end;
   process.Free;
 end;
@@ -128,6 +132,7 @@ end;
 
 procedure TWinDSPROApps.OpenFile(FileName: string);
 begin
+  {$IFDEF WINDOWS}
   case LowerCase(ExtractFileExt(FileName)) of
     // NDS
     '.dsi', '.nds', '.pme', '.srl': ExecuteEx('no$zoomer', FileName);
@@ -140,12 +145,16 @@ begin
     // GB
     '.gb', '.gmb', '.sgb': ExecuteEx('vba-m', FileName);
   end;
+  {$ENDIF}
 end;
 
 procedure TWinDSPROApps.OpenDirectory(App: TAppItem);
+{$IFDEF WINDOWS}
 var
   process: TProcessUTF8;
+{$ENDIF}
 begin
+  {$IFDEF WINDOWS}
   process := TProcessUTF8.Create(nil);
   process.Executable := 'explorer.exe';
   process.Parameters.Add('/select,"' + AppsDirectory + App.Directory +
@@ -153,6 +162,9 @@ begin
 
   process.Execute;
   process.Free;
+  {$ELSE}
+  OpenDocument(AppsDirectory + App.Directory + PathDelim);
+  {$ENDIF}
 end;
 
 procedure TWinDSPROApps.SavedGames(App: TAppItem);
@@ -162,9 +174,14 @@ end;
 
 procedure TWinDSPROApps.CreateDesktopShortCut(App: TAppItem);
 begin
+  {$IFDEF WINDOWS}
   ushortcuts.CreateDesktopShortcut(AppsDirectory + App.Directory +
     PathDelim + App.Executable,
     '', App.Name + ' (' + rs_application_title + ')');
+  {$ENDIF}
+  {$IFDEF LINUX}
+  ShowMessage('Function not available on Linux.');
+  {$ENDIF}
 end;
 
 procedure TWinDSPROApps.GoogleSearch(App: TAppItem);
@@ -183,25 +200,22 @@ end;
 procedure TWinDSPROApps.TagsListBox(AList: TStrings);
 begin
   AList.Add(ustrings.rs_everything);
+  {$IFDEF WINDOWS}
   AList.Add('Citra');
   AList.Add('DeSmuME');
   AList.Add('No$gba');
   AList.Add('VBA');
+  {$ENDIF}
 end;
 
 procedure TWinDSPROApps.LoadApps;
 var
   i: integer;
 begin
-{
-NDS|*.dsi;*nds;*pme;*.srl;
-3DS|*.3ds;*.cci;*.csu;
-GBC|*.cgb;*.gbc;
-GBA|*.agb;*.bin;*.elf;*.gba;*.mb;
-GB|*.gb;*.gmb;*.sgb;
-}
+  {$IFDEF WINDOWS}
   { citra }
-  List.AddEx('Citra', '2016.08.16', 'citra', 'citra-qt.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
+  List.AddEx('Citra', '2016.10.19', 'citra', 'citra-qt.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
+  List.AddEx('Citra (32 bit)', '2016.10.17', 'citra32', 'citra_x86.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
   { no$gba }
   List.AddEx('No$gba', '2.6a', 'no$gba', 'no$gba.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
   List.AddEx('No$gba_', '2.8d', 'no$gba_', 'no$gba.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
@@ -212,11 +226,12 @@ GB|*.gb;*.gmb;*.sgb;
   List.AddEx('NGZoom', '1.0', 'no$gba', 'ngzoom.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   List.AddEx('No$gba2X', '1.0', 'no$gba', 'no$gba2x.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   { desmume }
-  List.AddEx('DeSmuME', 'r5548', 'desmume', 'desmume.exe', '', '%1:s', 'NDS', '', 'desmume', 'archivo', 'NDS|*.dsi;*nds;*pme;*.srl;');
+  List.AddEx('DeSmuME', 'r5563', 'desmume', 'desmume.exe', '', '%1:s', 'NDS', '', 'desmume', 'archivo', 'NDS|*.dsi;*nds;*pme;*.srl;');
   { vba }
   List.AddEx('VBA-M', '2.0 (2015.11.19)', 'vbam', 'vbam.exe', '', '%1:s', 'GB/GBC/GBA', '', 'vba', 'archivo', 'GB/GBC/GBA|*.gb;*.gmb;*.sgb;*.cgb;*.gbc;*.agb;*.bin;*.elf;*.gba;*.mb;');
   List.AddEx('VBA Link', '1.8.0', 'vbalink', 'vbalink.exe', '', '%1:s', 'GB/GBC/GBA', '', 'vba', 'archivo', 'GB/GBC/GBA|*.gb;*.gmb;*.sgb;*.cgb;*.gbc;*.agb;*.bin;*.elf;*.gba;*.mb;');
-  
+  {$ENDIF}
+
   for i := List.Count - 1 downto 0 do
     if not FileExistsUTF8(AppsDirectory + List[i].Directory + PathDelim + List[i].Executable) then
       List.Delete(i);
