@@ -11,8 +11,8 @@ uses
   lclintf, Dialogs, usettings;
 
 const
-  Version = 20161019;
-  VersionStr = '2016.10.19';
+  Version = 20161111;
+  VersionStr = '2016.11.11';
   UpdatesURL = 'http://lainz.github.io/windspro/version/windspro14.txt';
   rs_application_title = 'WinDS PRO';
 
@@ -215,7 +215,7 @@ var
 begin
   {$IFDEF WINDOWS}
   { citra }
-  List.AddEx('Citra', '2016.10.19', 'citra', 'citra-qt.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
+  List.AddEx('Citra', '2016.11.11', 'citra', 'citra-qt.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
   List.AddEx('Citra (32 bit)', '2016.10.17', 'citra32', 'citra_x86.exe', '', '%1:s', '3DS', '', 'citra', 'user', '3DS|*.3ds;*.3dsx;*.cci;*.cxi;*.csu;');
   { no$gba }
   List.AddEx('No$gba', '2.6a', 'no$gba', 'no$gba.exe', '', '%1:s', 'GBA/NDS', '', 'no$gba', 'battery', 'GBA/NDS|*.agb;*.bin;*.elf;*.gba;*.mb;*.dsi;*nds;*pme;*.srl;');
@@ -227,7 +227,7 @@ begin
   List.AddEx('NGZoom', '1.0', 'no$gba', 'ngzoom.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   List.AddEx('No$gba2X', '1.0', 'no$gba', 'no$gba2x.exe', '', '', 'NDS', '', 'no$gba', 'battery', '');
   { desmume }
-  List.AddEx('DeSmuME', 'r5563', 'desmume', 'desmume.exe', '', '%1:s', 'NDS', '', 'desmume', 'archivo', 'NDS|*.dsi;*nds;*pme;*.srl;');
+  List.AddEx('DeSmuME', 'r5575', 'desmume', 'desmume.exe', '', '%1:s', 'NDS', '', 'desmume', 'archivo', 'NDS|*.dsi;*nds;*pme;*.srl;');
   { vba }
   List.AddEx('VBA-M', '2.0 (2015.11.19)', 'vbam', 'vbam.exe', '', '%1:s', 'GB/GBC/GBA', '', 'vba', 'archivo', 'GB/GBC/GBA|*.gb;*.gmb;*.sgb;*.cgb;*.gbc;*.agb;*.bin;*.elf;*.gba;*.mb;');
   List.AddEx('VBA Link', '1.8.0', 'vbalink', 'vbalink.exe', '', '%1:s', 'GB/GBC/GBA', '', 'vba', 'archivo', 'GB/GBC/GBA|*.gb;*.gmb;*.sgb;*.cgb;*.gbc;*.agb;*.bin;*.elf;*.gba;*.mb;');

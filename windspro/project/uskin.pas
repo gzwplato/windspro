@@ -120,6 +120,7 @@ begin
   end;
 
   lbctrl := TListBox(Control);
+  lbctrl.Canvas.Clipping := False;
   Selected := odSelected in State;
 
   bitmap := TBitmap.Create;
@@ -196,6 +197,9 @@ begin
   { Draw }
   lbctrl.Canvas.Draw(ARect.Left, ARect.Top, bitmap);
   bitmap.Free;
+
+  lbctrl.Canvas.ClipRect := Rect(0, 0, 0, 0);
+  lbctrl.Canvas.Clipping := True;
 end;
 
 procedure TagsListBoxDrawItem(Control: TWinControl; Index: integer; ARect: TRect; State: TOwnerDrawState; Hovered: boolean);
