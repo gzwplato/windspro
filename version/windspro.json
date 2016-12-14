@@ -1,1 +1,3 @@
-{ "DownloadURL" : "http:\/\/windsprocentral.blogspot.com\/", "Executable" : "windspro.exe", "Name" : "WinDS PRO", "URL" : "http:\/\/lainz.github.io\/windspro\/version\/windspro.json", "Version" : 20161111 }
+{
+  "DownloadURL" : "https://github.com/lainz/windspro/releases/download/v2016.11.11/WinDS.PRO.2016.11.11.zip"
+}
