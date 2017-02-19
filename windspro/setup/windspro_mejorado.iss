@@ -4,12 +4,12 @@
 #define MyAppRegName "windspro"
 
 ; cambiar siempre!
-#define MyAppVerName "WinDS PRO 2016.04.08"
-#define MyAppVersion "2016.04.08"
+#define MyAppVerName "WinDS PRO 2017.02.12"
+#define MyAppVersion "2017.02.12"
 ;#define WPA "WinDS PRO Apps 2015.05.28WP.exe"
 
 #define MyAppPublisher "WinDS PRO Central"
-#define MyAppPublisherCopyright "WinDS PRO © 2015 WinDS PRO Central"
+#define MyAppPublisherCopyright "WinDS PRO © 2017 WinDS PRO Central"
 #define MyAppURL "http://windsprocentral.blogspot.com/"
 #define MyAppExeName "windspro.exe"
 
@@ -210,12 +210,12 @@ end;
 [Components]
 Name: "WP"; Description: "WinDS PRO"; Types: full compact custom; Flags: fixed;
 #ifdef Library
-;Name: "OpenAL"; Description: "OpenAL (Audio)"; Types: full;
+Name: "OpenAL"; Description: "OpenAL (Audio)"; Types: full;
 ;Name: "VCRedist2010"; Description: "Microsoft Visual C++ 2010"; Types: full;
 ;Name: "VCRedist2012"; Description: "Microsoft Visual C++ 2012"; Types: full;
 ;Name: "VCRedist2013"; Description: "Microsoft Visual C++ 2013"; Types: full;
-Name: "VCRedist2015"; Description: "Microsoft Visual C++ 2015"; Types: full;
-Name: "DirectX9"; Description: "DirectX 9.0c"; Types: full;
+Name: "VCRedist2015"; Description: "Microsoft Visual C++ 2015"; Types: full compact custom; Flags: fixed;
+Name: "DirectX9"; Description: "DirectX 9.0c"; Types: full compact custom; Flags: fixed;
 #endif
 
 [Files]
@@ -228,12 +228,13 @@ Source: trimmer.exe; DestDir: {app}; Flags: ignoreversion; Components: WP
 ;Source: lua51.dll; DestDir: {app}; Flags: ignoreversion; Components: WP
 ;Source: lua5.1.dll; DestDir: {app}; Flags: ignoreversion; Components: WP
 ;Source: windspro.ico; DestDir: {app}; Flags: ignoreversion; Components: WP
-Source: {#MyAppExeName}; DestDir: {app}; Flags: ignoreversion; Components: WP
+;Source: {#MyAppExeName}; DestDir: {app}; Flags: ignoreversion; Components: WP
 ;Source: windspro.cdd; DestDir: {app}; Flags: ignoreversion; Components: WP
 Source: windspro.dll; DestDir: {app}; Flags: ignoreversion; Components: WP
 Source: emu\*; DestDir: {app}\emu; Flags: ignoreversion recursesubdirs createallsubdirs; Components: WP
-Source: locale\*; DestDir: {app}\locale; Excludes: "*.po"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: WP
+;Source: locale\*; DestDir: {app}\locale; Excludes: "*.po"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: WP
 Source: 3dsexplorer\*; DestDir: {app}\3dsexplorer; Flags: ignoreversion recursesubdirs createallsubdirs; Components: WP
+Source: electron\*; DestDir: {app}; Flags: ignoreversion recursesubdirs createallsubdirs; Components: WP
 ; desmume x86
 Source: desmume_\x86\desmume.exe; DestDir: {app}\emu\desmume\; Flags: ignoreversion; Check: Not Is64BitInstallMode; Components: WP
 ; desmume x64
@@ -340,7 +341,7 @@ Filename: {tmp}\vcredist_2015_x64.exe; Parameters: "/Q"; WorkingDir: {tmp}; Stat
 Filename: {tmp}\dxwebsetup.exe; Parameters: "/Q"; WorkingDir: {tmp}; StatusMsg: "DirectX 9.0 Web Setup..."; Components: DirectX9
 #endif
 
-Filename: {app}\{#MyAppExeName}; WorkingDir: {app}; Flags: postinstall nowait; Description: {#MyAppName}; StatusMsg: {#MyAppName}...
+;Filename: {app}\{#MyAppExeName}; WorkingDir: {app}; Flags: postinstall nowait; Description: {#MyAppName}; StatusMsg: {#MyAppName}...
 Filename:"http://windsprocentral.blogspot.com/"; Flags: postinstall nowait shellexec
 
 [Registry]
