@@ -1,14 +1,25 @@
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here [using GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/), select a template crafted by a designer, and publish. After your page is generated, you can check out the new `gh-pages` branch locally. If you're using GitHub for Mac or GitHub for Windows, simply sync your repository and you'll see the new branch.
+# WinDS PRO
+An open source frontend for launching emulators.
 
-### Designer Templates
-We've crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.
+# Sources
+The folder windspro contains:
+* electron: sources of the Electron based project
+* project-ams: sources of the AutoPlay Media Studio based project
+* project: sources of the Lazarus based project
+* setup: the Inno Setup script to generate an installer
 
-### Creating pages manually
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
+The folder windsproapps contains:
+* electron: sources of the Electron based project
+* project: sources of the Lazarus based project
+* setup: the Inno Setup script to generate an installer
 
-### Authors and Contributors
-You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
+The folder windsprozero contains:
+* WinDS PRO Zero: Visual Studio C# based project
 
-### Support or Contact
-Having trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Each project
+* WinDS PRO contains only emulators for Nintendo handheld devices. The installer handles file-associations for each type.
+* WinDS PRO Apps contains all kind of emulators. The projects are very similar or identical to WinDS PRO.
+* WinDS PRO Zero contains all kind of emulators, is a web based frontend, working as a web explorer that manages downloaded and installed apps.
+
+# License
+GPL v3, you can modify the source code and distribute resulting binaries, but you need to keep it open source. Electron, Lazarus, AutoPlay Media Studio, Inno Setup and Visual Studio are just the tools we use, you need to follow any licenses that are related to these products individually.
