@@ -1,18 +1,6 @@
 (function () {
     document.getElementById("search").focus();
 
-    function loadJSON(file, callback) {
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', file, true);
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
-
     function RunProgram(path, exe, parameters) {
         var child_process = require('child_process').execFile;
 
@@ -69,7 +57,7 @@
         fileExt = '(' + fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length) + ')';
     }
 
-    app.controller('EmulatorController', function () {
+    app.controller('EmulatorController', ['$http', function ($http) {
         this.fileName = fileName;
         this.fileExt = fileExt;
         this.closeFileName = function () {
@@ -110,8 +98,8 @@
             }
         }
 
-        loadJSON(updatesURL, function (response) {
-            var updates_JSON = JSON.parse(response);
+        $http.get(updatesURL).then(response => {
+            var updates_JSON = response.data;
             if (updates_JSON.version != version) {
                 var dialog = document.querySelector('#dialog');
                 if (!dialog.showModal) {
@@ -125,6 +113,6 @@
                 dialog.showModal();
             }
         });
+    }]);
 
-    });
 })();
