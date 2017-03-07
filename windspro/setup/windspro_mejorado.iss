@@ -4,8 +4,8 @@
 #define MyAppRegName "windspro"
 
 ; cambiar siempre!
-#define MyAppVerName "WinDS PRO 2017.02.12"
-#define MyAppVersion "2017.02.12"
+#define MyAppVerName "WinDS PRO 2017.03.07"
+#define MyAppVersion "2017.03.07"
 ;#define WPA "WinDS PRO Apps 2015.05.28WP.exe"
 
 #define MyAppPublisher "WinDS PRO Central"

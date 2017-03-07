@@ -13,7 +13,7 @@
         xobj.send(null);
     }
 
-    function RunProgram(path, exe, file) {
+    function RunProgram(path, exe, parameters) {
         var child_process = require('child_process').execFile;
 
         var remote = require('electron').remote;
@@ -22,10 +22,10 @@
 
         var options = { cwd: path };
 
-        if (file === '') {
+        if (parameters.length == 0) {
             child_process(path + exe, options, function (err, data) { console.log(err); console.log(data.toString()); });
         } else {
-            child_process(path + exe, [file], options, function (err, data) { console.log(err); console.log(data.toString()); });
+            child_process(path + exe, parameters, options, function (err, data) { console.log(err); console.log(data.toString()); });
         }
     }
 
@@ -91,7 +91,7 @@
             }
             if (this.fileExt == '') {
                 var hasExt = true;
-            } {
+            } else {
                 var hasExt = this.emulators[index].extensions.indexOf(this.fileExt) != -1;
             }
             return (hasText && hasExt);
@@ -99,7 +99,15 @@
         this.emulators = emulators;
         this.categories = categories;
         this.run = function (index) {
-            RunProgram('emu\\' + emulators[index].folder + '\\', emulators[index].executable, this.fileName);
+            if (this.fileName === '') {
+                RunProgram(emuFolder + emulators[index].folder + '\\', emulators[index].executable, []);
+            } else {
+                if (emulators[index].hasOwnProperty('parameters')) {
+                    RunProgram(emuFolder + emulators[index].folder + '\\', emulators[index].executable, emulators[index].parameters(this.fileName));
+                } else {
+                    RunProgram(emuFolder + emulators[index].folder + '\\', emulators[index].executable, [this.fileName]);
+                }
+            }
         }
 
         loadJSON(updatesURL, function (response) {

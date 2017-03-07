@@ -3,6 +3,52 @@ const version = '2017.02.16';
 const updatesURL = 'http://lainz.github.io/windspro/version/windsproapps.json';
 const emuFolder = 'windsproapps\\\\app\\\\';
 
+var systems = {
+    Atari5200: '(a52)',
+    Atari7800: '(a78)',
+    AtariJaguar: '(j64)',
+    AtariLynx: '(lnx)',
+    BandaiWonderSwanColor: '(wsc)',
+    BandaiWonderSwan: '(ws)',
+    ColecoVision: '(col)',
+    Commodore64PP: '(g64)(nib)',
+    Commodore64Tapes: '(tap)',
+    Commodore64: '(102)(bin)(crt)(u2)(u3)(u4)(u5)(ua2)(ub3)',
+    CommodorePlus4: '(bin)(u24)(u25)(u4)',
+    CommodoreVIC20: '(20)(40)(60)(70)(80)(a0)(b0)(bin)(ub3)(ud7)(ue1)',
+    MSX2: '(rom)',
+    MSX: '(rom)',
+    NECPCEngine: '(pce)',
+    NECSuperGrafx: '(pce)(sgx)',
+    NintendoFDS: '(bin)(fds)',
+    NintendoGBA: '(agb)(bin)(elf)(gba)(mb)',
+    NintendoGBC: '(cgb)(gbc)',
+    NintendoGB: '(gb)(gmb)(sgb)',
+    Nintendo3DS: '(3ds)(3dsx)(cci)(cxi)(csu)',
+    Nintendo64: '(n64)(v64)(z64)(rom)(jap)(pal)(usa)',
+    NintendoDS: '(dsi)(nds)(pme)(srl)',
+    NintendoNES: '(nes)(nsf)(unf)(bin)',
+    NintendoGameCube: '(iso)',
+    NintendoWii: '(iso)',
+    NintendoPokemonMini: '(min)',
+    NintendoSNES: '(bin)(smc)(fig)(sfc)(swc)',
+    NintendoVirtualBoy: '(vb)(vboy)',
+    Sega32X: '(32x)(bin)',
+    SegaDreamcast: '(iso)',
+    SegaGameGear: '(gg)(sms)',
+    SegaMasterSystem: '(sms)(sg)(sc)(mv)',
+    SegaMegaDrive: '(md)(smd)(gen)',
+    SegaPICO: '(md)',
+    SegaSaturn: '(iso)',
+    SegaSG1000: '(sc)(sg)',
+    NeoGeoPocketColor: '(ngc)(ngp)',
+    NeoGeoPocket: '(ngp)',
+    SonyPlayStation2: '(iso)',
+    SonyPlayStation3: '(iso)',
+    SonyPlayStationPortable: '(iso)',
+    SonyPlayStation: '(iso)(bin)'
+}
+
 var categories = [
     {
         name: 'All',
@@ -106,11 +152,11 @@ var emulators = [
         executable: 'Atari800Win.exe',
         folder: 'Atari800Win_PLus_41',
         icon: 'atari800winplus.png',
-        extensions: ''
+        extensions: systems.Atari5200
     },
     {
         name: 'BizHawk',
-        category: 'Multiplatform',
+        category: 'Multiplatform, Nintendo, Sega, Atari',
         version: '2017.02.16',
         executable: 'EmuHawk.exe',
         folder: 'BizHawk_153',
@@ -119,12 +165,12 @@ var emulators = [
     },
     {
         name: 'blueMSX',
-        category: 'Multiplatform',
+        category: 'Multiplatform, Coleco, Sega, MSX',
         version: '2.8.3',
         executable: 'blueMSX.exe',
         folder: 'blueMSX_282',
         icon: 'bluemsx.png',
-        extensions: ''
+        extensions: systems.ColecoVision + systems.MSX + systems.MSX2 + systems.SegaSG1000
     },
     {
         name: 'CCS64',
@@ -133,7 +179,10 @@ var emulators = [
         executable: 'CCS64.exe',
         folder: 'CCS64_39',
         icon: 'ccs64.png',
-        extensions: ''
+        extensions: systems.Commodore64 + systems.Commodore64PP + systems.Commodore64Tapes,
+        parameters: function(file) {
+            return [file,'-fastload','-autorun']
+        }
     },
     {
         name: 'Cemu',
@@ -151,7 +200,7 @@ var emulators = [
         executable: 'citra-qt.exe',
         folder: 'Citra_3DS_Emulator',
         icon: 'citra.png',
-        extensions: ''
+        extensions: systems.Nintendo3DS
     },
     {
         name: 'Cxbx',
@@ -169,7 +218,7 @@ var emulators = [
         executable: 'demul.exe',
         folder: 'Demul_0582',
         icon: 'demul.png',
-        extensions: ''
+        extensions: systems.SegaDreamcast
     },
     {
         name: 'DeSmuME X432R 32-bit',
@@ -178,7 +227,7 @@ var emulators = [
         executable: 'DeSmuME_X432R_x86.exe',
         folder: 'DeSmuME_x432R',
         icon: 'desmume.png',
-        extensions: ''
+        extensions: systems.NintendoDS
     },
     {
         name: 'DeSmuME X432R 64-bit',
@@ -187,7 +236,7 @@ var emulators = [
         executable: 'DeSmuME_X432R_x64.exe',
         folder: 'DeSmuME_x432R',
         icon: 'desmume.png',
-        extensions: ''
+        extensions: systems.NintendoDS
     },
     {
         name: 'Dolphin (Ishiiruka) 32-bit',
@@ -196,7 +245,10 @@ var emulators = [
         executable: 'Dolphin.exe',
         folder: 'IshiirukaDolphin',
         icon: 'dolphinishiiruka.png',
-        extensions: ''
+        extensions: systems.NintendoGameCube + systems.NintendoWii,
+        parameters: function(file) {
+            return ['/e', file]
+        }
     },
     {
         name: 'Dolphin (Ishiiruka) 64-bit',
@@ -205,7 +257,10 @@ var emulators = [
         executable: 'Dolphin.exe',
         folder: 'IshiirukaDolphin64',
         icon: 'dolphinishiiruka.png',
-        extensions: ''
+        extensions: systems.NintendoGameCube + systems.NintendoWii,
+        parameters: function(file) {
+            return ['/e', file]
+        }
     },
     {
         name: 'Dolphin 32-bit',
@@ -214,7 +269,10 @@ var emulators = [
         executable: 'Dolphin.exe',
         folder: 'Dolphin_402_32-bit',
         icon: 'dolphin.png',
-        extensions: ''
+        extensions: systems.NintendoGameCube + systems.NintendoWii,
+        parameters: function(file) {
+            return ['/e', file]
+        }
     },
     {
         name: 'Dolphin 64-bit',
@@ -223,7 +281,10 @@ var emulators = [
         executable: 'Dolphin.exe',
         folder: 'Dolphin_402_64-bit',
         icon: 'dolphin.png',
-        extensions: ''
+        extensions: systems.NintendoGameCube + systems.NintendoWii,
+        parameters: function(file) {
+            return ['/e', file]
+        }
     },
     {
         name: 'ePSXe',
@@ -232,7 +293,7 @@ var emulators = [
         executable: 'ePSXe.exe',
         folder: 'ePSXe_190',
         icon: 'epsxe.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation
     },
     {
         name: 'FCEUX',
@@ -241,7 +302,7 @@ var emulators = [
         executable: 'fceux.exe',
         folder: 'FCEUX',
         icon: 'fceux.png',
-        extensions: ''
+        extensions: systems.NintendoNES + systems.NintendoFDS
     },
     {
         name: 'Final Burn Alpha rr',
@@ -259,7 +320,7 @@ var emulators = [
         executable: 'gens.exe',
         folder: 'Gens_gs_r7',
         icon: 'gensgs.png',
-        extensions: ''
+        extensions: systems.Sega32X + systems.SegaMegaDrive
     },
     {
         name: 'Gens rr',
@@ -268,7 +329,7 @@ var emulators = [
         executable: 'Gens.exe',
         folder: 'Gens_rr_11_r341',
         icon: 'gens.png',
-        extensions: ''
+        extensions: systems.Sega32X + systems.SegaMegaDrive
     },
     {
         name: 'Handy',
@@ -277,7 +338,7 @@ var emulators = [
         executable: 'handy.exe',
         folder: 'Handy_095',
         icon: 'handy.png',
-        extensions: ''
+        extensions: systems.AtariLynx
     },
     {
         name: 'Hourglass',
@@ -304,7 +365,7 @@ var emulators = [
         executable: 'Fusion.exe',
         folder: 'Kega_Fusion_364',
         icon: 'kegafusion.png',
-        extensions: ''
+        extensions: systems.Sega32X + systems.SegaGameGear + systems.SegaMasterSystem + systems.SegaMegaDrive + systems.SegaPICO + systems.SegaSG1000
     },
     {
         name: 'lsnes rr2',
@@ -313,25 +374,25 @@ var emulators = [
         executable: 'lsnes-bsnes.exe',
         folder: 'lsnes_rr2_beta15',
         icon: 'default.png',
-        extensions: ''
+        extensions: systems.NintendoSNES
     },
     {
         name: 'Mednafen (MedGui)',
-        category: 'Multiplatform',
+        category: 'Multiplatform, Atari, Nintendo, Sega, Sony, SNK, Bandai, NEC',
         version: '0.9.36.5',
         executable: 'MedGui.exe',
         folder: 'mednafen_09321_wip',
         icon: 'medgui.png',
-        extensions: ''
+        extensions: systems.AtariLynx + systems.BandaiWonderSwan + systems.NintendoGB + systems.NintendoGBC + systems.NintendoGBA + systems.NintendoNES + systems.NintendoFDS + systems.NintendoVirtualBoy + systems.NECPCEngine + systems.NECSuperGrafx + systems.SegaGameGear + systems.SegaMegaDrive + systems.SegaMasterSystem + systems.SonyPlayStation + systems.NeoGeoPocket + systems.NeoGeoPocketColor
     },
     {
         name: 'Mednafen-rr',
-        category: 'Multiplatform',
+        category: 'Multiplatform, Atari, Nintendo, Sega, Sony, SNK, Bandai, NEC',
         version: '1.1',
         executable: 'Mednafen-Front.exe',
         folder: 'Mednafen_rr_11',
         icon: 'mednafen.png',
-        extensions: ''
+        extensions: systems.AtariLynx + systems.BandaiWonderSwan + systems.NintendoGB + systems.NintendoGBC + systems.NintendoGBA + systems.NintendoNES + systems.NintendoFDS + systems.NintendoVirtualBoy + systems.NECPCEngine + systems.NECSuperGrafx + systems.SegaGameGear + systems.SegaMegaDrive + systems.SegaMasterSystem + systems.SonyPlayStation + systems.NeoGeoPocket + systems.NeoGeoPocketColor
     },
     {
         name: 'Mupen64-rr',
@@ -340,7 +401,7 @@ var emulators = [
         executable: 'mupen64.exe',
         folder: 'Mupen64_rr_462',
         icon: 'mupen64.png',
-        extensions: ''
+        extensions: systems.Nintendo64
     },
     {
         name: 'Mupen64Plus',
@@ -349,7 +410,7 @@ var emulators = [
         executable: 'mupen64plus-qt.exe',
         folder: 'Mupen64Plus_20',
         icon: 'mupen64plus.png',
-        extensions: ''
+        extensions: systems.Nintendo64
     },
     {
         name: 'no$2k6',
@@ -367,7 +428,7 @@ var emulators = [
         executable: 'NO$C64.exe',
         folder: 'no$c64_11',
         icon: 'nocashc64.png',
-        extensions: ''
+        extensions: systems.Commodore64 + systems.Commodore64Tapes + systems.Commodore64PP
     },
     {
         name: 'no$msx',
@@ -376,7 +437,7 @@ var emulators = [
         executable: 'NO$MSX.EXE',
         folder: 'no$msx_15',
         icon: 'nocashmsx.png',
-        extensions: ''
+        extensions: systems.MSX + systems.MSX2
     },
     {
         name: 'no$nes',
@@ -385,7 +446,7 @@ var emulators = [
         executable: 'NO$NES.EXE',
         folder: 'no$nes_11',
         icon: 'nocashnes.png',
-        extensions: ''
+        extensions: systems.NintendoNES
     },
     {
         name: 'no$psx',
@@ -394,7 +455,7 @@ var emulators = [
         executable: 'NO$PSX.EXE',
         folder: 'no$psx_18',
         icon: 'nocashpsx.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation
     },
     {
         name: 'no$sns',
@@ -403,7 +464,7 @@ var emulators = [
         executable: 'NO$SNS.EXE',
         folder: 'no$sns_15',
         icon: 'nocashsnes.png',
-        extensions: ''
+        extensions: systems.NintendoSNES
     },
     {
         name: 'nullDC',
@@ -412,7 +473,7 @@ var emulators = [
         executable: 'nullDC_Win32_Release.exe',
         folder: 'nullDC_150',
         icon: 'nulldc.png',
-        extensions: ''
+        extensions: systems.SegaDreamcast
     },
     {
         name: 'Ootake',
@@ -421,7 +482,7 @@ var emulators = [
         executable: 'Ootake.exe',
         folder: 'Ootake_275',
         icon: 'ootake.png',
-        extensions: ''
+        extensions: systems.NECPCEngine + systems.NECSuperGrafx
     },
     {
         name: 'Open MSX 32-bit',
@@ -430,7 +491,7 @@ var emulators = [
         executable: 'openmsx.exe',
         folder: 'Open_MSX_0100_32-bit',
         icon: 'openmsx.png',
-        extensions: ''
+        extensions: systems.MSX
     },
     {
         name: 'Open MSX 64-bit',
@@ -439,7 +500,7 @@ var emulators = [
         executable: 'openmsx.exe',
         folder: 'Open_MSX_0100_64-bit',
         icon: 'openmsx.png',
-        extensions: ''
+        extensions: systems.MSX
     },
     {
         name: 'Oswan',
@@ -448,7 +509,7 @@ var emulators = [
         executable: 'Oswan.exe',
         folder: 'Oswan_173',
         icon: 'oswan.png',
-        extensions: ''
+        extensions: systems.BandaiWonderSwan + systems.BandaiWonderSwanColor
     },
     {
         name: 'PCSX-R',
@@ -457,7 +518,7 @@ var emulators = [
         executable: 'pcsxr.exe',
         folder: 'PCSXR_1993',
         icon: 'pcsxr.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation
     },
     {
         name: 'PCSX2',
@@ -466,7 +527,7 @@ var emulators = [
         executable: 'pcsx2.exe',
         folder: 'PCSX2_121',
         icon: 'pcsx2.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation2
     },
     {
         name: 'Play!',
@@ -475,7 +536,7 @@ var emulators = [
         executable: 'Play.exe',
         folder: 'Play_32',
         icon: 'play.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation2
     },
     {
         name: 'PokeMini',
@@ -484,7 +545,7 @@ var emulators = [
         executable: 'PokeMini.exe',
         folder: 'PokeMini_054',
         icon: 'pokemini.png',
-        extensions: ''
+        extensions: systems.NintendoPokemonMini
     },
     {
         name: 'PPSSPP 32-bit',
@@ -493,7 +554,7 @@ var emulators = [
         executable: 'PPSSPPWindows.exe',
         folder: 'PPSSPP',
         icon: 'ppsspp.png',
-        extensions: ''
+        extensions: systems.SonyPlayStationPortable
     },
     {
         name: 'PPSSPP 64-bit',
@@ -502,7 +563,7 @@ var emulators = [
         executable: 'PPSSPPWindows64.exe',
         folder: 'PPSSPP',
         icon: 'ppsspp.png',
-        extensions: ''
+        extensions: systems.SonyPlayStationPortable
     },
     {
         name: 'Project64',
@@ -511,7 +572,7 @@ var emulators = [
         executable: 'Project64.exe',
         folder: 'Project64_21',
         icon: 'project64.png',
-        extensions: ''
+        extensions: systems.Nintendo64
     },
     {
         name: 'Project64K7E',
@@ -520,7 +581,7 @@ var emulators = [
         executable: 'Project64K7E.exe',
         folder: 'Project64K7E_131',
         icon: 'project64k7e.png',
-        extensions: ''
+        extensions: systems.Nintendo64
     },
     {
         name: 'ProSystem',
@@ -529,7 +590,7 @@ var emulators = [
         executable: 'ProSystem.exe',
         folder: 'ProSystem_13',
         icon: 'prosystem.png',
-        extensions: ''
+        extensions: systems.Atari7800
     },
     {
         name: 'pSX fin',
@@ -538,7 +599,7 @@ var emulators = [
         executable: 'psxfin.exe',
         folder: 'pSX_1_13',
         icon: 'psxfin.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation
     },
     {
         name: 'PSXjin',
@@ -547,7 +608,7 @@ var emulators = [
         executable: 'psxjin.exe',
         folder: 'PSXjin_202',
         icon: 'psxjin.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation
     },
     {
         name: 'Red Dragon',
@@ -556,7 +617,7 @@ var emulators = [
         executable: 'rdragon.exe',
         folder: 'Red_Dragon_038',
         icon: 'reddragon.png',
-        extensions: ''
+        extensions: systems.NintendoVirtualBoy
     },
     {
         name: 'rpcs3',
@@ -565,7 +626,7 @@ var emulators = [
         executable: 'rpcs3.exe',
         folder: 'rpcs3',
         icon: 'default.png',
-        extensions: ''
+        extensions: systems.SonyPlayStation3
     },
     {
         name: 'Snes9x 32-bit',
@@ -574,7 +635,7 @@ var emulators = [
         executable: 'snes9x.exe',
         folder: 'Snes9x_153',
         icon: 'snes9x.png',
-        extensions: ''
+        extensions: systems.NintendoSNES
     },
     {
         name: 'Snes9x 64-bit',
@@ -583,7 +644,7 @@ var emulators = [
         executable: 'snes9x-x64.exe',
         folder: 'Snes9x_153_(64-bit)',
         icon: 'snes9x.png',
-        extensions: ''
+        extensions: systems.NintendoSNES
     },
     {
         name: 'SSF',
@@ -592,7 +653,7 @@ var emulators = [
         executable: 'SSF.exe',
         folder: 'SSF_012_beta_R4',
         icon: 'default.png',
-        extensions: ''
+        extensions: systems.SegaSaturn
     },
     {
         name: 'VBA-rr',
@@ -601,7 +662,7 @@ var emulators = [
         executable: 'vba-v24m-svn480.exe',
         folder: 'VBA-rr_v24m_r480',
         icon: 'vbarr.png',
-        extensions: ''
+        extensions: systems.NintendoGB + systems.NintendoGBC + systems.NintendoGBA
     },
     {
         name: 'VBjin',
@@ -610,7 +671,7 @@ var emulators = [
         executable: 'vbjin.exe',
         folder: 'VBjin_r61',
         icon: 'vbjin.png',
-        extensions: ''
+        extensions: systems.NintendoVirtualBoy
     },
     {
         name: 'Virtual Jaguar',
@@ -619,7 +680,7 @@ var emulators = [
         executable: 'virtualjaguar.exe',
         folder: 'Virtual_Jaguar_210',
         icon: 'virtualjaguar.png',
-        extensions: ''
+        extensions: systems.AtariJaguar
     },
     {
         name: 'VirtuaNES',
@@ -628,7 +689,7 @@ var emulators = [
         executable: 'VirtuaNES.exe',
         folder: 'VirtuaNES_097e',
         icon: 'virtuanes.png',
-        extensions: ''
+        extensions: systems.NintendoNES
     },
     {
         name: 'WinVICE C128',
@@ -637,7 +698,7 @@ var emulators = [
         executable: 'x128.exe',
         folder: 'WinVICE_22',
         icon: 'winvice.png',
-        extensions: ''
+        extensions: systems.Commodore64 + systems.Commodore64PP + systems.Commodore64Tapes
     },
     {
         name: 'WinVICE C64',
@@ -646,7 +707,7 @@ var emulators = [
         executable: 'x64.exe',
         folder: 'WinVICE_22',
         icon: 'winvice.png',
-        extensions: ''
+        extensions: systems.Commodore64 + systems.Commodore64PP + systems.Commodore64Tapes
     },
     {
         name: 'WinVICE C64 DTV',
@@ -655,7 +716,7 @@ var emulators = [
         executable: 'x64dtv.exe',
         folder: 'WinVICE_22',
         icon: 'winvice.png',
-        extensions: ''
+        extensions: systems.Commodore64 + systems.Commodore64PP + systems.Commodore64Tapes
     },
     {
         name: 'WinVICE CBM-II',
@@ -682,7 +743,7 @@ var emulators = [
         executable: 'xplus4.exe',
         folder: 'WinVICE_22',
         icon: 'winvice.png',
-        extensions: ''
+        extensions: systems.CommodorePlus4
     },
     {
         name: 'WinVICE VIC20',
@@ -691,7 +752,7 @@ var emulators = [
         executable: 'xvic.exe',
         folder: 'WinVICE_22',
         icon: 'winvice.png',
-        extensions: ''
+        extensions: systems.CommodoreVIC20
     },
     {
         name: 'Xenia',
@@ -709,6 +770,6 @@ var emulators = [
         executable: 'zsnesw.exe',
         folder: 'ZSNES_151',
         icon: 'zsnes.png',
-        extensions: ''
+        extensions: systems.NintendoSNES
     }
 ];
