@@ -1,0 +1,19 @@
+Se pueden abrir estos emuladores con el terminal:
+dosbox
+fs-uae
+fs-uae-arcade
+fs-uae-launcher
+hatari
+higan
+mednafen (linea de comandos)
+nestopia
+pcsx
+stella
+virtualjaguar
+vba (linea de comandos)
+yabause
+fceux
+desmume
+mupen64plus-qt
+dolphin-emu
+vbaexpress
