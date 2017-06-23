@@ -3,9 +3,6 @@
 
     function RunProgram(exe, parameters) {
         var child_process = require('child_process').execFile;
-
-        var remote = require('electron').remote;
-        argv = remote.getGlobal('sharedObject').argv;
         var options = {};
 
         if (parameters.length == 0) {

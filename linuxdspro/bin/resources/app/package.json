@@ -1,14 +1,14 @@
 {
-  "name": "windspro",
+  "name": "linuxdspro",
   "version": "1.0.0",
-  "description": "WinDS PRO",
+  "description": "LinuxDS PRO",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "repository": "",
   "keywords": [
-    "WinDS PRO"
+    "LinuxDS PRO"
   ],
   "author": "WinDS PRO Central",
   "license": "",

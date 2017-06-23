@@ -1,5 +1,5 @@
 const exeName = 'linuxdspro';
-const version = '2017.05.22';
+const version = '2017.05.29';
 const updatesURL = '';
 
 var categories = [
@@ -70,6 +70,14 @@ var categories = [
     {
         name: 'Amiga',
         search: 'Amiga'
+    },
+    {
+        name: 'PS2',
+        search: '(PS2)'
+    },
+    {
+        name: 'PSP',
+        search: '(PSP)'
     }
 ];
 
@@ -81,15 +89,6 @@ var emulators = [
         executable: 'dosbox',
         folder: '',
         icon: 'dosbox.png',
-        extensions: ''
-    },
-    {
-        name: 'FS-UAE',
-        category: 'Amiga',
-        version: '',
-        executable: 'fs-uae',
-        folder: '',
-        icon: 'fs-uae.png',
         extensions: ''
     },
     {
@@ -217,21 +216,93 @@ var emulators = [
         folder: '',
         icon: 'vbaexpress.png',
         extensions: ''
+    },
+    {
+        name: 'Gens GS',
+        category: 'Sega',
+        version: '',
+        executable: 'gens',
+        folder: '',
+        icon: 'gensgs.png',
+        extensions: ''
+    },
+    {
+        name: 'ZSNES',
+        category: 'Super Nintendo (SNES)',
+        version: '',
+        executable: 'zsnes',
+        folder: '',
+        icon: 'zsnes.png',
+        extensions: ''
+    },
+    {
+        name: 'PPSSPP',
+        category: 'Sony PlayStation Portable (PSP)',
+        version: '',
+        executable: 'ppsspp-sdl',
+        folder: '',
+        icon: 'ppsspp.png',
+        extensions: ''
+    },
+    {
+        name: 'PCSX2',
+        category: 'Sony PlayStation 2 (PS2)',
+        version: '',
+        executable: 'PCSX2',
+        folder: '',
+        icon: 'pcsx2.png',
+        extensions: ''
+    },
+    {
+        name: 'PokeMini',
+        category: 'Pokémon Mini',
+        version: '',
+        executable: 'pokemini',
+        folder: '',
+        icon: 'pokemini.png',
+        extensions: ''
+    },
+    {
+        name: 'mGBA',
+        category: 'Nintendo Game Boy Advance (GBA)',
+        version: '',
+        executable: 'mgba-qt',
+        folder: '',
+        icon: 'mgba.png',
+        extensions: ''
+    },
+    {
+        name: 'Snes9x',
+        category: 'Super Nintendo (SNES)',
+        version: '',
+        executable: 'snes9x-gtk',
+        folder: '',
+        icon: 'snes9x.png',
+        extensions: ''
+    },
+    {
+        name: 'VBA-M',
+        category: 'Nintendo Game Boy (GB) / Color (GBC) / Advance (GBA)',
+        version: '',
+        executable: 'visualboyadvance-m',
+        folder: '',
+        icon: 'vbam.png',
+        extensions: ''
     }
 ];
 
 categories.sort((a, b) => {
     if (a.name > b.name)
-      return 1
+        return 1
     if (a.name < b.name)
-      return -1
+        return -1
     return 0
 });
 
 emulators.sort((a, b) => {
     if (a.name > b.name)
-      return 1
+        return 1
     if (a.name < b.name)
-      return -1
+        return -1
     return 0
 });

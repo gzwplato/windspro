@@ -3,10 +3,10 @@ LinuxDS PRO
 -----------
 
 Descripción: Pack de emuladores para Ubuntu.
-Versión: 2017.05.22 Ubuntu 16.04.
+Versión: 2017.05.29 Ubuntu 16.04.
 
 --------------
-1. Instalación
+Instalación
 --------------
 
 Abre un terminal en esta carpeta y escribe:
@@ -15,7 +15,7 @@ sh instalar.sh
 Ingresa tu password de superusuario y comenzará la instalación.
 
 -----------------
-2. Desinstalación
+Desinstalación
 -----------------
 
 Abre un terminal en esta carpeta y escribe:
@@ -26,6 +26,9 @@ Ingresa tu password de superusuario y comenzará la desinstalación.
 ----------------------
 Historial de versiones
 ----------------------
+
+2017.05.29
+- Agregado: Gens GS, PCSX2, PPSSPP, PokeMini, Snes9x, VBA Express, VBA-M, ZSNES, mGBA
 
 2017.05.22
 - Primera versión para Ubuntu 16.04

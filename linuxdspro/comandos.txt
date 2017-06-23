@@ -1,6 +1,6 @@
 Se pueden abrir estos emuladores con el terminal:
 dosbox
-fs-uae
+fs-uae (linea de comandos)
 fs-uae-arcade
 fs-uae-launcher
 hatari
@@ -17,3 +17,11 @@ desmume
 mupen64plus-qt
 dolphin-emu
 vbaexpress
+gens
+zsnes
+ppsspp-sdl
+visualboyadvance-m
+PCSX2
+pokemini
+snes9x-gtk
+mgba-qt
