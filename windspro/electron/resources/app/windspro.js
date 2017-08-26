@@ -57,7 +57,68 @@
         fileExt = '(' + fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length) + ')';
     }
 
+    String.prototype.replaceAll = function (search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, 'g'), replacement);
+    };
+
     app.controller('EmulatorController', ['$http', function ($http) {
+        this.alpha = 0.7;
+        this.changeBackground = function (image) {
+            document.getElementById("main").style.backgroundImage = "url('file:///" + image.replaceAll('\\\\', '/') + "')";
+        }
+        this.saveBackground = function (image) {
+            localStorage.setItem("background", image);
+        }
+        this.loadBackground = function () {
+            var image = localStorage.getItem("background");
+            if (image) {
+                var fs = require('fs');
+                fs.stat(image, (err) => {
+                    if (err) {
+                        
+                    } else {
+                        this.changeBackground(image);
+                    }
+                });
+            }
+        }
+        this.loadBackground();
+        this.changeAlpha = function(alpha){
+            document.getElementById("table").style.backgroundColor = "rgba(255,255,255," + alpha + ")";
+            document.getElementById("header").style.backgroundColor = "rgba(255,255,255," + (alpha + 0.2) + ")";
+        }
+        this.saveAlpha = function(alpha) {
+            localStorage.setItem("alpha", alpha);
+        }
+        this.loadAlpha = function() {
+            var alpha = localStorage.getItem("alpha");
+            if (alpha) {
+                this.alpha = parseFloat(alpha);
+                this.changeAlpha(alpha);
+            }
+        }
+        this.loadAlpha();
+        this.openDialog = function () {
+            const { dialog } = require('electron').remote
+            dialog.showOpenDialog({ filters: [{ name: 'Images', extensions: ['jpg', 'png', 'gif'] },], properties: ['openFile'] }, (fileNames) => {
+                if (fileNames) {
+                    console.log(fileNames[0])
+                    this.saveBackground(fileNames[0]);
+                    this.changeBackground(fileNames[0]);
+                } else {
+                    console.log('Cancelar')
+                }
+            });
+        }
+        this.changeColor = function() {
+            this.alpha = this.alpha + 0.05;
+            if (this.alpha > 1) {
+                this.alpha = 0.7;
+            }
+            this.saveAlpha(this.alpha);
+            this.changeAlpha(this.alpha);
+        }
         this.fileName = fileName;
         this.fileExt = fileExt;
         this.closeFileName = function () {

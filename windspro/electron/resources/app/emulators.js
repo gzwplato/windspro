@@ -1,5 +1,5 @@
 const exeName = 'windspro.exe';
-const version = '2017.03.07';
+const version = '2017.08.26';
 const updatesURL = 'http://lainz.github.io/windspro/version/windspro.json';
 const emuFolder = 'emu\\\\';
 
@@ -34,7 +34,7 @@ var emulators = [
     {
         name: 'Citra',
         category: 'Nintendo 3DS (3DS)',
-        version: '2017.03.06',
+        version: '2017.08.25',
         executable: 'citra-qt.exe',
         folder: 'citra',
         icon: 'citra.png',
@@ -52,7 +52,7 @@ var emulators = [
     {
         name: 'Citra Edge',
         category: 'Nintendo 3DS (3DS)',
-        version: '0.1.236',
+        version: '0.1.463',
         executable: 'citra-qt.exe',
         folder: 'citraedge',
         icon: 'citraedge.png',
@@ -61,7 +61,7 @@ var emulators = [
     {
         name: 'DeSmuME',
         category: 'Nintendo DS (NDS)',
-        version: '2017.03.06',
+        version: '2017.08.25',
         executable: 'desmume.exe',
         folder: 'desmume',
         icon: 'desmume.png',

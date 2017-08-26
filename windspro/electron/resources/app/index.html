@@ -15,10 +15,10 @@
 
 <body ng-controller="EmulatorController as ec">
 
-  <div class="layout-transparent mdl-layout mdl-js-layout">
+  <div id="main" class="layout-transparent mdl-layout mdl-js-layout">
     <main class="mdl-layout__content">
 
-      <div class="mdl-shadow--2dp header">
+      <div id="header" class="mdl-shadow--2dp header">
         <div class="mdl-card__supporting-text">
           <form action="">
             <div ng-show="ec.fileName != ''">
@@ -32,15 +32,29 @@
               <label class="mdl-textfield__label" for="search">Search...</label>
             </div>
             <div>
-              <button type="button" class="mdl-chip" ng-click="ec.search(cat.search)" ng-repeat="cat in ec.categories">
-              <span class="mdl-chip__text" >{{cat.name}}</span>
+              <span ng-repeat="cat in ec.categories">
+              <button type="button" class="mdl-chip" ng-click="ec.search(cat.search)" >
+              <span class="mdl-chip__text">{{cat.name}}</span>
+              </button>
+              </span>
+              <button type="button" class="mdl-chip" ng-click="ec.options = true" ng-show="!ec.options">
+              <span class="mdl-chip__text">...</span>
+            </button>
+              <button type="button" class="mdl-chip" ng-click="ec.openDialog()" ng-show="ec.options">
+              <span class="mdl-chip__text">Image</span>
+            </button>
+              <button type="button" class="mdl-chip" ng-click="ec.changeColor()" ng-show="ec.options">
+              <span class="mdl-chip__text">Alpha</span>
+            </button>
+            <button type="button" class="mdl-chip" ng-click="ec.options = false" ng-show="ec.options">
+              <span class="mdl-chip__text">...</span>
             </button>
             </div>
           </form>
         </div>
       </div>
 
-      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <table id="table" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
         <thead>
           <tr>
             <th class="mdl-data-table__cell--non-numeric">Emulator</th>
